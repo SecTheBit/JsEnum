@@ -14,7 +14,7 @@ A simple Python Script to extract the Javascripts files from the urls Provided a
 
 ![Alt Text](https://github.com/SecTheBit/JsEnum/blob/main/Media/Demo.gif)
 
-In the demonstration we can see that we only need a file containing urls through which we can extract the js files.
+In the demonstration we can see that we only need a file containing urls through which we can extract the js files. You can also add the other keyword in the script itself.
 
 ## Usage
 
