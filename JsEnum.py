@@ -42,10 +42,10 @@ def ExtractJslinks(url,count):
     links_list=[]
     count_s=0
     try:
-        response=requests.get(url,headers=header)
+        response_url=requests.get(url,headers=header)
     except requests.exceptions.RequestException as e:
         print (colored("[+] Some Error Occured While Fetching the url :"+url,'red'))
-    page_html=BS(response.text, 'html.parser')
+    page_html=BS(response_url.text, 'html.parser')
     for scripts in page_html.find_all("script"):
         links=scripts.get("src")
         if(links==None):
@@ -63,11 +63,11 @@ def FindingSensitiveInfo(file):
     for urls in file_tmp:
         urls=urls.strip()
         try:
-            response=requests.get(urls,headers=header)
+            response_urls=requests.get(urls,headers=header)
         except requests.exceptions.RequestException as e:
             print (colored("[+] Some Error Occured While Fetching the url :"+urls,'red'))
         for keywords in sensitive_keywords:
-            if keywords in response.text:
+            if keywords in response_urls.text:
                 print (colored("[+]The Keyword: "+keywords+" is found in the url: "+urls,'green'))
 
     file_tmp.close()
