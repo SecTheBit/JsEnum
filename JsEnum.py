@@ -44,7 +44,7 @@ def ExtractJslinks(url,count):
     try:
         response=requests.get(url,headers=header)
     except requests.exceptions.RequestException as e:
-        print (colored("[+] Some Error Occured While Fetching the url :"+urls,'red'))
+        print (colored("[+] Some Error Occured While Fetching the url :"+url,'red'))
     page_html=BS(response.text, 'html.parser')
     for scripts in page_html.find_all("script"):
         links=scripts.get("src")
